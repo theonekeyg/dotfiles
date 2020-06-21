@@ -134,30 +134,15 @@ alias ..="cd .."
 alias ....="cd ../.."
 alias ......="cd ../../.."
 
-# Exports
-# Export Android studio
-export PATH=/usr/local/android-studio/bin:$PATH
-# Homebrew bin path
-export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
-# Export Swift Programming Language
-export PATH=/home/keyg/lib/Swift/usr/bin:$PATH
-export LINUX_SOURCEKIT_LIB_PATH=/home/keyg/lib/Swift/usr/lib
-export PATH=/home/keyg/lib/SourceKitten:$PATH
-# Export cuda lib
-export PATH=/usr/local/cuda-10.1/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64
-export LD_LIBRARY_PATH=/usr/local/cuda-10.1/extras/CUPTI/lib64:$LD_LIBRARY_PATH
-# Export Kotlin
-export PATH=/usr/local/kotlinc/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/kotlinc:$LD_LIBRARY_PATH
-# Export c includes
-export C_INCLUDE_PATH=/home/keyg/Desktop/proj/rand_projects/obs-plugins/daudio/obs-studio/libobs
+# Local exports
+source bashrc_exports.sh
 
 # Enabling syntax "... | xclip" to copy output of first
 # statement to clipboard
 alias clip="xclip -selection clipboard"
 
-# Disable XOFF from Software flow control (cause of issues using with vim)
+# Disable XOFF from Software flow control 
+# (cause of issues when using with vim)
 stty -ixon
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
