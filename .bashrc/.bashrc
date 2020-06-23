@@ -135,7 +135,7 @@ alias ....="cd ../.."
 alias ......="cd ../../.."
 
 # Local exports
-source bashrc_exports.sh
+source ~/dotfiles/.bashrc/bashrc_exports.sh
 
 # Enabling syntax "... | xclip" to copy output of first
 # statement to clipboard
