@@ -407,7 +407,7 @@ org.gnome.desktop.notifications show-in-lock-screen true
 org.gnome.desktop.peripherals.keyboard delay uint32 212 --- Important ---
 org.gnome.desktop.peripherals.keyboard remember-numlock-state true
 org.gnome.desktop.peripherals.keyboard numlock-state false
-org.gnome.desktop.peripherals.keyboard repeat true
+org.gnome.desktop.peripherals.keyboard repeat true --- Important ---
 org.gnome.desktop.peripherals.keyboard repeat-interval uint32 18 --- Important ---
 org.gnome.desktop.peripherals.mouse middle-click-emulation false
 org.gnome.desktop.peripherals.mouse natural-scroll false
