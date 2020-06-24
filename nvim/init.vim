@@ -20,7 +20,9 @@ set noswapfile
 map <leader>w :w<CR>
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
-map <leader>d :FZF<CR>
+nnoremap <leader>st :SyntasticToggleMode<CR>
+nnoremap <leader>sc :SyntasticCheck<CR>
+nnoremap <leader>d :FZF<CR>
 
 " Enable pasting from global clipboard
 " with CTRL+V in Insert mode
