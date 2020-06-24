@@ -1,7 +1,6 @@
 #!/usr/bin/bash
 
 if [ -f gsettings ]; then
-  echo "removed"
   rm gsettings
 fi
 
