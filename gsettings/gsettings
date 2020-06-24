@@ -404,11 +404,11 @@ org.gnome.desktop.media-handling autorun-x-content-start-app ['x-content/unix-so
 org.gnome.desktop.notifications application-children ['update-manager', 'org-gnome-nautilus', 'firefox', 'gnome-control-center', 'apport-gtk', 'org-gnome-gedit', 'google-chrome']
 org.gnome.desktop.notifications show-banners true
 org.gnome.desktop.notifications show-in-lock-screen true
-org.gnome.desktop.peripherals.keyboard delay uint32 212
+org.gnome.desktop.peripherals.keyboard delay uint32 212 --- Important ---
 org.gnome.desktop.peripherals.keyboard remember-numlock-state true
 org.gnome.desktop.peripherals.keyboard numlock-state false
-org.gnome.desktop.peripherals.keyboard repeat true
-org.gnome.desktop.peripherals.keyboard repeat-interval uint32 18
+org.gnome.desktop.peripherals.keyboard repeat true --- Important ---
+org.gnome.desktop.peripherals.keyboard repeat-interval uint32 18 --- Important ---
 org.gnome.desktop.peripherals.mouse middle-click-emulation false
 org.gnome.desktop.peripherals.mouse natural-scroll false
 org.gnome.desktop.peripherals.mouse speed 0.0
