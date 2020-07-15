@@ -18,6 +18,7 @@ let mapleader=","
 
 set noswapfile
 map <leader>w :w<CR>
+map <C-A> <Nop>
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
 nnoremap <leader>st :SyntasticToggleMode<CR>
@@ -39,42 +40,27 @@ map <C-L> <C-W>l
 
 " Install plugins section
 call plug#begin('/home/keyg/.local/share/nvim/plugged')
-" Fuzzy finder
+
+" Navigation
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
-" Collection of colorschemes
-Plug 'rafi/awesome-vim-colorschemes'
-
-" Search tool
+Plug 'preservim/nerdtree'
 Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-eunuch' " Interactions with filesystem within vim
 
-" Syntax for languages
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'yggdroot/indentline'
+
+Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
-
-" Interactions with filesystem within vim
-Plug 'tpope/vim-eunuch'
-
-" Cool plugin for surroundings
-Plug 'tpope/vim-surround'
-
-" Plugin for quick commentary
-Plug 'tpope/vim-commentary'
-
-"Supports plugin functionality repeating
-Plug 'tpope/vim-repeat'
-
-" Syntax checking plugin for vim
 Plug 'vim-syntastic/syntastic'
 
-" NERDTree plugin for maintaining working directories
-Plug 'preservim/nerdtree'
-
-" Icons for NERDTree
-Plug 'ryanoasis/vim-devicons'
-
-" Plugin for convenient buffer usage
-Plug 'vim-scripts/buffet.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
 
 call plug#end()
 
@@ -89,24 +75,29 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_html_checkers = ['syntastic-html-gjslint']
 let g:syntastic_javascript_checkers = ['syntastic-html-gjslint']
 
+let g:indentLine_setColors = 0
+" let g:indentLine_color_term = 145
+let g:indentLine_bgcolor_term = 150
+let g:indentLine_bgcolor_gui = '#FF5F00'
+let g:indentLine_char = '│'
+let g:indentLine_concealcursor = 'inc'
+let g:indentLine_conceallevel = 2
+
+let g:airline_statusline_ontop = 1
+
 " VIM's theme
-" let &t_8f = '\<Esc>[38;2;%lu;%lu;%lum'
-" let &t_8b = '\<Esc>[48;2;%lu;%lu;%lum'
 syntax enable
 set termguicolors
 set background=dark
-set t_Co=256
+" set t_Co=256
 colorscheme gruvbox
 
-" Mapping for Buffet popup
 map <F2> :Buffers<CR>
 
 " Mapping for opening NERDTree in the current file's folder
 nnoremap <leader>f :execute (@% == '' ? 'NERDTreeToggle' : 'NERDTreeFind')<CR>
 
-set mouse=a " Yep
-
-" Jump up the tag tree
+set mouse=a
 map <leader>t :tag<CR>
 
 " Cancel highlighting
