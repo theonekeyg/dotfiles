@@ -106,23 +106,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-## >>> conda initialize >>>
-## !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/home/keyg/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/home/keyg/anaconda3/etc/profile.d/conda.sh" ]; then
-#        . "/home/keyg/anaconda3/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/home/keyg/anaconda3/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
-#conda activate ml_env
-## <<< conda initialize <<<
-
-
 # Aliases for quicker path reduction in terminal
 alias ..="cd .."
 alias ....="cd ../.."
@@ -131,8 +114,10 @@ alias ......="cd ../../.."
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# Local exports
-source ~/dotfiles/.bashrc/bashrc_exports.sh
+# Local config exports
+if [ -f ~/.bashrc_local ]; then
+  source ~/.bashrc_local
+fi
 
 # Enabling syntax "... | xclip" to copy output of first
 # statement to clipboard

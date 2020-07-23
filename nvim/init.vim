@@ -52,7 +52,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'yggdroot/indentline'
+" Plug 'yggdroot/indentline'
 
 Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
@@ -75,15 +75,12 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_html_checkers = ['syntastic-html-gjslint']
 let g:syntastic_javascript_checkers = ['syntastic-html-gjslint']
 
-let g:indentLine_setColors = 0
-" let g:indentLine_color_term = 145
-let g:indentLine_bgcolor_term = 150
-let g:indentLine_bgcolor_gui = '#FF5F00'
-let g:indentLine_char = '│'
-let g:indentLine_concealcursor = 'inc'
-let g:indentLine_conceallevel = 2
-
-let g:airline_statusline_ontop = 1
+" let g:indentLine_setColors = 0
+" let g:indentLine_bgcolor_term = 150
+" let g:indentLine_bgcolor_gui = '#FF5F00'
+" let g:indentLine_char = ''
+" let g:indentLine_concealcursor = 'inc'
+" let g:indentLine_conceallevel = 2
 
 " VIM's theme
 syntax enable
