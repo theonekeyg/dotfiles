@@ -59,6 +59,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'vim-syntastic/syntastic'
 
 Plug 'tpope/vim-surround'
+Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 
