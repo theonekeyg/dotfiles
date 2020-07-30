@@ -89,6 +89,7 @@ set termguicolors
 set background=dark
 " set t_Co=256
 colorscheme gruvbox
+let g:airline#extensions#whitespace#enabled = 0
 
 map <F2> :Buffers<CR>
 
