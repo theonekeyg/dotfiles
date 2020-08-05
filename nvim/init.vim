@@ -9,6 +9,7 @@ set ai
 vnoremap <silent> <leader>[ :w !python3 -i<CR>
 
 set colorcolumn=120
+set textwidth=120
 set expandtab
 set shiftwidth=2
 set tabstop=2
@@ -39,7 +40,7 @@ map <C-H> <C-W>h
 map <C-L> <C-W>l
 
 " Install plugins section
-call plug#begin('/home/keyg/.local/share/nvim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
 " Navigation
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -57,11 +58,14 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-syntastic/syntastic'
+Plug 'rust-lang/rust.vim'
 
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
+
+Plug 'majutsushi/tagbar'
 
 call plug#end()
 
