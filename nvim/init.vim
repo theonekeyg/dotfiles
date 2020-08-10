@@ -33,7 +33,7 @@ inoremap <C-V> <Esc>"+pa
 " Set font in order to use it within NERDTree
 " set guifont=3270-Medium\ Nerd\ Font\ Complete.otf\ 11
 
-" Smart way to move between windows
+" Quick way to move between windows
 map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-H> <C-W>h
