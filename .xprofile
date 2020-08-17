@@ -1,0 +1,6 @@
+#!/usr/bin/sh
+
+xset r rate 250 40
+
+setxkbmap -layout us,ru
+setxkbmap -option 'grp:alt_shift_toggle'

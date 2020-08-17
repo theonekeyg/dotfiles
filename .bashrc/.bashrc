@@ -1,3 +1,5 @@
+# https://www.gnu.org/software/bash/manual/bash.html
+
 # If not running interactively, don't do anything
 case $- in
   *i*) ;;
@@ -15,14 +17,6 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
-
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -33,13 +27,13 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-  xterm-color|*-256color) color_prompt=yes;;
+  xterm*|*-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+# force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -109,11 +103,6 @@ alias gs="git status"
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# Local config exports
-if [ -f ~/.bashrc_local ]; then
-  source ~/.bashrc_local
-fi
-
 # Enabling syntax "... | xclip" to copy output of first
 # statement to clipboard
 alias clip="xclip -selection clipboard"
@@ -123,3 +112,9 @@ alias clip="xclip -selection clipboard"
 stty -ixon
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_COMMAND='ag -U -g ""'
+
+# Local config exports
+if [ -f ~/.bashrc_local ]; then
+  source ~/.bashrc_local
+fi

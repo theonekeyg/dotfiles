@@ -51,7 +51,7 @@ Plug 'tpope/vim-eunuch' " Interactions with filesystem within vim
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 Plug 'rafi/awesome-vim-colorschemes'
 " Plug 'yggdroot/indentline'
 
