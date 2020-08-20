@@ -2,6 +2,7 @@
 " source ~/.config/nvim/coc.conf.vim
 
 " Enable line numbers
+set relativenumber
 set number
 set ai
 
