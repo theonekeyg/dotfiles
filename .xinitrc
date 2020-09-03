@@ -1,3 +1,5 @@
 #!/usr/bin/env sh
+
+[ -f ~/.xprofile ] && . ~/.xprofile
+
 exec i3
-xset r rate 250 40
