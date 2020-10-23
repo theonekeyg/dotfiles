@@ -1,6 +1,6 @@
 [user]
-	email = theonekeyg@gmail.com
-	name = theonekeyg
+  email = theonekeyg@gmail.com
+  name = theonekeyg
 [alias]
   st = status
   br = branch
@@ -14,4 +14,4 @@
   logp = log --pretty=oneline --abbrev-commit
   rebase = rebase --verbose
 [core]
-	editor = vim
+  editor = vim
