@@ -1,5 +1,17 @@
 [user]
 	email = theonekeyg@gmail.com
 	name = theonekeyg
+[alias]
+  st = status
+  br = branch
+  ci = commit -v
+  co = checkout
+  di = diff
+  dis = diff --staged
+  dlog = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph
+  logm = log --stat --patch
+  logp = log --pretty=oneline --abbrev-commit
+  rebase = rebase --verbose
 [core]
 	editor = vim

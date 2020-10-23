@@ -94,12 +94,6 @@ alias ..="cd .."
 alias ....="cd ../.."
 alias ......="cd ../../.."
 
-# Git aliases
-alias gc="git commit"
-alias gd="git diff"
-alias gl="git log"
-alias gs="git status"
-
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
