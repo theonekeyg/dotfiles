@@ -14,9 +14,10 @@ ull parse_usage(int *nonidled) {
   ull usr, nice, sys, idle, iowait, irq, softirq, steal, gst, gst_nice;
   if (!fscanf(fp, "cpu  %llu %llu %llu %llu %llu %llu %llu %llu %llu %llu",
          &usr, &nice, &sys, &idle, &iowait, &irq, &softirq, &steal, &gst,
-         &gst_nice)) 
+         &gst_nice)) {
     fclose(fp);
     exit(EXIT_FAILURE);
+  }
   *nonidled = usr + nice + sys + irq + softirq + steal;
   fclose(fp);
   return *nonidled + idle + iowait;
