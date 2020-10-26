@@ -109,6 +109,4 @@ stty -ixon
 export FZF_DEFAULT_COMMAND='ag -U -g ""'
 
 # Local config exports
-if [ -f ~/.bashrc_local ]; then
-  source ~/.bashrc_local
-fi
+[ -f ~/.bashrc_local ] && source ~/.bashrc_local
