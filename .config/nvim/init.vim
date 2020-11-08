@@ -84,7 +84,7 @@ let g:syntastic_javascript_checkers = ['syntastic-html-gjslint']
 " let g:indentLine_setColors = 0
 " let g:indentLine_bgcolor_term = 150
 " let g:indentLine_bgcolor_gui = '#FF5F00'
-" let g:indentLine_char = ''
+" let g:indentLine_char = '|'
 " let g:indentLine_concealcursor = 'inc'
 " let g:indentLine_conceallevel = 2
 
@@ -92,7 +92,6 @@ let g:syntastic_javascript_checkers = ['syntastic-html-gjslint']
 syntax enable
 set termguicolors
 set background=dark
-" set t_Co=256
 colorscheme gruvbox
 let g:airline#extensions#whitespace#enabled = 0
 
@@ -104,11 +103,11 @@ nnoremap <leader>f :execute (@% == '' ? 'NERDTreeToggle' : 'NERDTreeFind')<CR>
 set mouse=a
 map <leader>t :tag<CR>
 
-" Cancel highlighting
+" Cancel search highlighting
 map <leader>q :let @/=""<CR>
 
 " Fold the docstrings in python files
-fu! Fold_py(...)
+function! Fold_py(...)
     setlocal foldenable foldmethod=syntax
     syn region pythonString
           \ start=+[uU]\=\z('''\|"""\)+ end="\z1" keepend fold
@@ -119,7 +118,7 @@ fu! Fold_py(...)
 endfunction
 autocmd FileType python call Fold_py()
 
-" Search for selected text, forwards or backwards. 
+" Search for selected text, forwards or backwards.
 " https://vim.fandom.com/wiki/Search_for_visually_selected_text
 vnoremap <silent> * :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
@@ -159,3 +158,6 @@ function! AlignLine(line, sep, maxpos, extra)
   let spaces = repeat(' ', a:maxpos - strlen(m[1]) + a:extra)
   return m[1] . spaces . m[2]
 endfunction
+
+highlight ExtraWhitespace ctermbg=darkred guibg=darkorange
+autocmd Syntax * syn match ExtraWhitespace /\s\+$/
