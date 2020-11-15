@@ -6,6 +6,7 @@ backup:
 	test ! -f $(HOME)/.agignore || mv $(HOME)/.agignore $(HOME)/.agignore.bak
 	test ! -f $(HOME)/.bashrc || mv $(HOME)/.bashrc $(HOME)/.bashrc.bak
 	test ! -f $(HOME)/.dircolors || mv $(HOME)/.dircolors $(HOME)/.dircolors.bak
+	test ! -f $(HOME)/.gdbinit || mv $(HOME)/.gdbinit $(HOME)/.gdbinit.bak
 	test ! -f $(HOME)/.gitconfig || mv $(HOME)/.gitconfig $(HOME)/.gitconfig.bak
 	test ! -f $(HOME)/.gitignore || mv $(HOME)/.gitignore $(HOME)/.gitignore.bak
 	test ! -f $(HOME)/.tmux.conf || mv $(HOME)/.tmux.conf $(HOME)/.tmux.conf.bak
@@ -17,6 +18,7 @@ rm-backup:
 	rm -rf $(HOME)/.agignore.bak
 	rm -rf $(HOME)/.bashrc.bak
 	rm -rf $(HOME)/.dircolors.bak
+	rm -rf $(HOME)/.gdbinit.bak
 	rm -rf $(HOME)/.gitconfig.bak
 	rm -rf $(HOME)/.gitignore.bak
 	rm -rf $(HOME)/.tmux.conf.bak
@@ -29,6 +31,7 @@ install: backup
 	ln -sf `pwd`/.agignore $(HOME)/.agignore
 	ln -sf `pwd`/.bashrc $(HOME)/.bashrc
 	ln -sf `pwd`/.dircolors $(HOME)/.dircolors
+	ln -sf `pwd`/.gdbinit $(HOME)/.gdbinit
 	ln -sf `pwd`/.gitconfig $(HOME)/.gitconfig
 	ln -sf `pwd`/.gitignore $(HOME)/.gitignore
 	ln -sf `pwd`/.tmux.conf $(HOME)/.tmux.conf
