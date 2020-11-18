@@ -31,9 +31,6 @@ nnoremap <leader>d :FZF<CR>
 " with CTRL+V in Insert mode
 inoremap <C-V> <Esc>"+pa
 
-" Set font in order to use it within NERDTree
-" set guifont=3270-Medium\ Nerd\ Font\ Complete.otf\ 11
-
 " Quick way to move between windows
 map <C-J> <C-W>j
 map <C-K> <C-W>k
@@ -117,6 +114,8 @@ function! Fold_py(...)
           \ contains=pythonSpaceError,pythonDoctest,@Spell
 endfunction
 autocmd FileType python call Fold_py()
+
+autocmd FileType java setlocal tabstop=4 shiftwidth=4 colorcolumn=80
 
 " Search for selected text, forwards or backwards.
 " https://vim.fandom.com/wiki/Search_for_visually_selected_text
