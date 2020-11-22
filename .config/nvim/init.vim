@@ -1,6 +1,3 @@
-" Additional coc configuration
-" source ~/.config/nvim/coc.conf.vim
-
 " Enable line numbers
 set relativenumber
 set number
@@ -31,7 +28,7 @@ nnoremap <leader>d :FZF<CR>
 " with CTRL+V in Insert mode
 inoremap <C-V> <Esc>"+pa
 
-" Quick way to move between windows
+" Quick way to move between splits
 map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-H> <C-W>h
@@ -54,6 +51,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 " Plug 'yggdroot/indentline'
 
 Plug 'tpope/vim-fugitive'
+Plug 'majutsushi/tagbar'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-syntastic/syntastic'
 Plug 'rust-lang/rust.vim'
@@ -62,8 +60,6 @@ Plug 'tpope/vim-surround'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-
-Plug 'majutsushi/tagbar'
 
 call plug#end()
 
@@ -78,6 +74,8 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_html_checkers = ['syntastic-html-gjslint']
 let g:syntastic_javascript_checkers = ['syntastic-html-gjslint']
 
+let g:airline#extensions#whitespace#enabled = 0
+
 " let g:indentLine_setColors = 0
 " let g:indentLine_bgcolor_term = 150
 " let g:indentLine_bgcolor_gui = '#FF5F00'
@@ -90,7 +88,6 @@ syntax enable
 set termguicolors
 set background=dark
 colorscheme gruvbox
-let g:airline#extensions#whitespace#enabled = 0
 
 map <F2> :Buffers<CR>
 
@@ -115,7 +112,7 @@ function! Fold_py(...)
 endfunction
 autocmd FileType python call Fold_py()
 
-autocmd FileType java setlocal tabstop=4 shiftwidth=4 colorcolumn=80
+autocmd FileType java setlocal tabstop=4 shiftwidth=4 colorcolumn=90
 
 " Search for selected text, forwards or backwards.
 " https://vim.fandom.com/wiki/Search_for_visually_selected_text
