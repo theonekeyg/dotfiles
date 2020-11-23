@@ -49,6 +49,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'ryanoasis/vim-devicons'
 Plug 'rafi/awesome-vim-colorschemes'
 " Plug 'yggdroot/indentline'
+Plug 'mhinz/vim-startify'
 
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
