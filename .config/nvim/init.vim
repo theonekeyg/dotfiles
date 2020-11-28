@@ -101,15 +101,23 @@ map <leader>t :tag<CR>
 " Cancel search highlighting
 map <leader>q :let @/=""<CR>
 
+" Quickly copy <file>:<line_num> into clipboard register
+function! GDBFileInfo()
+  let gdb_file_info = expand("%") . ":" . line(".")
+  let @+=gdb_file_info
+  echo gdb_file_info
+endfunction
+map <leader>b :call GDBBreak()<CR>
+
 " Fold the docstrings in python files
 function! Fold_py(...)
-    setlocal foldenable foldmethod=syntax
-    syn region pythonString
-          \ start=+[uU]\=\z('''\|"""\)+ end="\z1" keepend fold
-          \ contains=pythonEscape,pythonSpaceError,pythonDoctest,@Spell
-    syn region pythonRawString
-          \ start=+[uU]\=[rR]\z('''\|"""\)+ end="\z1" keepend fold
-          \ contains=pythonSpaceError,pythonDoctest,@Spell
+  setlocal foldenable foldmethod=syntax
+  syn region pythonString
+    \ start=+[uU]\=\z('''\|"""\)+ end="\z1" keepend fold
+    \ contains=pythonEscape,pythonSpaceError,pythonDoctest,@Spell
+  syn region pythonRawString
+    \ start=+[uU]\=[rR]\z('''\|"""\)+ end="\z1" keepend fold
+    \ contains=pythonSpaceError,pythonDoctest,@Spell
 endfunction
 autocmd FileType python call Fold_py()
 
