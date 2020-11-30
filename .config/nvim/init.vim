@@ -70,7 +70,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'passive_filetypes': ['python', 'java'] }
+let g:syntastic_mode_map = { 'passive_filetypes': ['python', 'java', 'asm'] }
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_html_checkers = ['syntastic-html-gjslint']
 let g:syntastic_javascript_checkers = ['syntastic-html-gjslint']
@@ -122,6 +122,7 @@ endfunction
 autocmd FileType python call Fold_py()
 
 autocmd FileType java setlocal tabstop=4 shiftwidth=4 colorcolumn=90
+autocmd FileType asm setlocal tabstop=4 shiftwidth=4 noexpandtab
 
 " Search for selected text, forwards or backwards.
 " https://vim.fandom.com/wiki/Search_for_visually_selected_text
