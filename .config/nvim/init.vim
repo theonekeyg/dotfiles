@@ -107,7 +107,7 @@ function! GDBFileInfo()
   let @+=gdb_file_info
   echo gdb_file_info
 endfunction
-map <leader>b :call GDBBreak()<CR>
+map <leader>b :call GDBFileInfo()<CR>
 
 " Fold the docstrings in python files
 function! Fold_py(...)
