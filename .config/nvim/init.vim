@@ -34,30 +34,35 @@ map <C-K> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
 
-" Install plugins section
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Navigation
+" Plugins for navigation
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-eunuch' " Interactions with filesystem within vim
 
+" To look cool on the internet
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ap/vim-css-color'
-" Plug 'ryanoasis/vim-devicons'
 Plug 'rafi/awesome-vim-colorschemes'
 " Plug 'yggdroot/indentline'
 Plug 'mhinz/vim-startify'
 
+" Plugins that use external utilities (aka bloat)
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
-Plug 'sheerun/vim-polyglot'
 Plug 'vim-syntastic/syntastic'
-Plug 'rust-lang/rust.vim'
 
+" Filetype modules
+" Plug 'sheerun/vim-polyglot'
+Plug 'rhysd/vim-llvm'
+Plug 'mboughaba/i3config.vim'
+Plug 'theonekeyg/rust.vim'
+
+" Plugins with generic functionality
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'tpope/vim-commentary'
@@ -109,6 +114,15 @@ function! GDBFileInfo()
   echo gdb_file_info
 endfunction
 map <leader>b :call GDBFileInfo()<CR>
+
+" Fold Rust docstring
+function! Fold_rust()
+  setlocal foldenable foldmethod=syntax
+  syn region rustCommentBlockDoc
+    \ start=+^\s*\z(\/\/\/\)+ end=+^\(\s*\z1\)\@!+ keepend fold
+    \ contains=rustTodo,rustCommentBlockDocNest,rustCommentBlockDocRustCode,@Spell
+endfunction
+autocmd FileType rust call Fold_rust()
 
 " Fold the docstrings in python files
 function! Fold_py(...)
