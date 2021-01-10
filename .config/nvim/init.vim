@@ -61,6 +61,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'rhysd/vim-llvm'
 Plug 'mboughaba/i3config.vim'
 Plug 'theonekeyg/rust.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Plugins with generic functionality
 Plug 'tpope/vim-surround'
