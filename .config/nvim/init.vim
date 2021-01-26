@@ -77,7 +77,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'passive_filetypes': ['python', 'java', 'asm'] }
+let g:syntastic_mode_map = { 'passive_filetypes': ['python', 'java', 'asm', 'rust'] }
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_html_checkers = ['syntastic-html-gjslint']
 let g:syntastic_javascript_checkers = ['syntastic-html-gjslint']
@@ -120,7 +120,7 @@ map <leader>b :call GDBFileInfo()<CR>
 function! Fold_rust()
   setlocal foldenable foldmethod=syntax
   syn region rustCommentBlockDoc
-    \ start=+^\s*\z(\/\/\/\)+ end=+^\(\s*\z1\)\@!+ keepend fold
+    \ start=+^\s*\z(\/\/\(!\|/\)\)+ end=+^\(\s*\z1\)\@!+ keepend fold
     \ contains=rustTodo,rustCommentBlockDocNest,rustCommentBlockDocRustCode,@Spell
 endfunction
 autocmd FileType rust call Fold_rust()
