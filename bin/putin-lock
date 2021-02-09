@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+usage() {
+  # TODO: add some flags
+  echo "
+  Usage: putin-lock
+  " ; exit 0
+}
+
+font=$(convert -list font | awk "{ a[NR] = \$2 } /family: $(fc-match sans -f "%{family}\n")/ { print a[NR-1]; exit }")
+text="See yall, fellow patriots"
+tmp_image=$(mktemp --suffix=.png)
+src_image=$(dirname $0)/assets/putin.png
+lock_icon=$(dirname $0)/assets/icons/lock.png
+command "cp" "$src_image" "${tmp_image}"
+lock_cmd=(i3lock -i "${tmp_image}")
+
+trap 'rm -f "${tmp_image}"' EXIT
+
+convert "${tmp_image}" -font "$font" -pointsize 48 -fill "white" -gravity center \
+  -annotate +0+160 "$text" "$lock_icon" -gravity center -composite "${tmp_image}"
+"${lock_cmd[@]}"
