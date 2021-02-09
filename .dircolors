@@ -112,6 +112,7 @@
 .z 01;31
 .zip 01;31
 .zoo 01;31
+Cargo.lock 00;30;1
 BLK 40;33;01 # block device driver
 CAPABILITY 30;41 # file with capability
 CHR 40;33;01 # character device driver
