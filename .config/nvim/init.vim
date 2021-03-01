@@ -185,3 +185,8 @@ endfunction
 
 highlight ExtraWhitespace ctermbg=darkred guibg=darkorange
 autocmd Syntax * syn match ExtraWhitespace /\s\+$/
+
+let s:vimrc_path = expand("<sfile>:h") . "/local.vim"
+if filereadable(s:vimrc_path)
+  exec "source " . s:vimrc_path
+endif
