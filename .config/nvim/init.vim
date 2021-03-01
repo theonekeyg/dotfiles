@@ -137,6 +137,7 @@ function! Fold_py(...)
 endfunction
 autocmd FileType python call Fold_py()
 
+autocmd BufNewFile,BufRead *.conf setfiletype conf
 autocmd FileType java setlocal tabstop=4 shiftwidth=4 colorcolumn=90
 autocmd FileType asm setlocal tabstop=4 shiftwidth=4 noexpandtab
 autocmd FileType markdown setlocal tabstop=4 shiftwidth=4 colorcolumn=80 textwidth=80 spell spelllang=en
