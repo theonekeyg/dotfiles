@@ -141,6 +141,7 @@ autocmd BufNewFile,BufRead *.conf setfiletype conf
 autocmd FileType java setlocal tabstop=4 shiftwidth=4 colorcolumn=90
 autocmd FileType asm setlocal tabstop=4 shiftwidth=4 noexpandtab
 autocmd FileType markdown setlocal tabstop=4 shiftwidth=4 colorcolumn=80 textwidth=80 spell spelllang=en
+autocmd FileType gitcommit setlocal colorcolumn=72 textwidth=72 spell spelllang=en
 
 " Search for selected text, forwards or backwards.
 " https://vim.fandom.com/wiki/Search_for_visually_selected_text
