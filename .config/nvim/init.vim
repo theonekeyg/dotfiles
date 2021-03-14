@@ -101,6 +101,7 @@ map <F2> :Buffers<CR>
 
 " Mapping for opening NERDTree in the current file's folder
 nnoremap <leader>f :execute (@% == '' ? 'NERDTreeToggle' : 'NERDTreeFind')<CR>
+let NERDTreeIgnore = ['\.o$[[file]]', '\.d$[[file]]']
 
 set mouse=a
 map <leader>t :tag<CR>
