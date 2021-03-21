@@ -77,7 +77,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'passive_filetypes': ['python', 'java', 'asm'] }
+let g:syntastic_mode_map = { 'passive_filetypes': ['python', 'java', 'asm', 'rust'] }
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_html_checkers = ['syntastic-html-gjslint']
 let g:syntastic_javascript_checkers = ['syntastic-html-gjslint']
@@ -120,7 +120,7 @@ map <leader>b :call GDBFileInfo()<CR>
 function! Fold_rust()
   setlocal foldenable foldmethod=syntax
   syn region rustCommentBlockDoc
-    \ start=+^\s*\z(\/\/\/\)+ end=+^\(\s*\z1\)\@!+ keepend fold
+    \ start=+^\s*\z(\/\/\(!\|/\)\)+ end=+^\(\s*\z1\)\@!+ keepend fold
     \ contains=rustTodo,rustCommentBlockDocNest,rustCommentBlockDocRustCode,@Spell
 endfunction
 autocmd FileType rust call Fold_rust()
@@ -137,8 +137,11 @@ function! Fold_py(...)
 endfunction
 autocmd FileType python call Fold_py()
 
+autocmd BufNewFile,BufRead *.conf setfiletype conf
 autocmd FileType java setlocal tabstop=4 shiftwidth=4 colorcolumn=90
 autocmd FileType asm setlocal tabstop=4 shiftwidth=4 noexpandtab
+autocmd FileType markdown setlocal tabstop=4 shiftwidth=4 colorcolumn=80 textwidth=80 spell spelllang=en
+autocmd FileType gitcommit setlocal colorcolumn=72 textwidth=72 spell spelllang=en
 
 " Search for selected text, forwards or backwards.
 " https://vim.fandom.com/wiki/Search_for_visually_selected_text
@@ -183,3 +186,8 @@ endfunction
 
 highlight ExtraWhitespace ctermbg=darkred guibg=darkorange
 autocmd Syntax * syn match ExtraWhitespace /\s\+$/
+
+let s:vimrc_path = expand("<sfile>:h") . "/local.vim"
+if filereadable(s:vimrc_path)
+  exec "source " . s:vimrc_path
+endif
