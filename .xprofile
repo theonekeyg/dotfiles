@@ -2,5 +2,13 @@
 
 xset r rate 250 40
 
+if [ -d $HOME/dotfiles/bin ]; then
+  if [ -z $PATH ]; then
+    export PATH=$HOME/dotfiles/bin
+  else
+    export PATH=$HOME/dotfiles/bin:$PATH
+  fi
+fi
+
 setxkbmap -layout us,ru
 setxkbmap -option 'grp:alt_shift_toggle'

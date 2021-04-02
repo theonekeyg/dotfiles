@@ -130,10 +130,10 @@ autocmd FileType rust call Fold_rust()
 function! Fold_py(...)
   setlocal foldenable foldmethod=syntax
   syn region pythonString
-    \ start=+[uU]\=\z('''\|"""\)+ end="\z1" keepend fold
+    \ start=+^\s*[uU]\=\z('''\|"""\)+ end="\z1" keepend fold
     \ contains=pythonEscape,pythonSpaceError,pythonDoctest,@Spell
   syn region pythonRawString
-    \ start=+[uU]\=[rR]\z('''\|"""\)+ end="\z1" keepend fold
+    \ start=+^\s*[uU]\=[rR]\z('''\|"""\)+ end="\z1" keepend fold
     \ contains=pythonSpaceError,pythonDoctest,@Spell
 endfunction
 autocmd FileType python call Fold_py()

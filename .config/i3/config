@@ -107,10 +107,10 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-for_window [title=Mines]    floating enable, resize set 1100 650
-for_window [title=Klondike] floating enable, resize set 800 550
-for_window [class=feh]      floating enable
-assign     [class=discord]  9
+for_window [instance=gnome-mines] floating enable, resize set 1100 650
+for_window [instance=sol]         floating enable, resize set 800 550
+for_window [class=feh]            floating enable
+assign     [class=discord]        9
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -118,6 +118,9 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+for_window [class=__i3_scratchpad instance=xterm] floating enable, resize set 1000 850
+bindsym $mod+Shift+g exec "bash i3-scratchpad.sh"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
