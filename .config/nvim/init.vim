@@ -23,6 +23,7 @@ nnoremap <leader>O O<Esc>
 nnoremap <leader>st :SyntasticToggleMode<CR>
 nnoremap <leader>sc :SyntasticCheck<CR>
 nnoremap <leader>d :FZF<CR>
+nnoremap <leader>D :FZF %:h<CR>
 
 " Enable pasting from global clipboard
 " with CTRL+V in Insert mode
