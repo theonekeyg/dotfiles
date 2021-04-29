@@ -15,6 +15,8 @@ set scrolloff=3
 set tags+=,/usr/lib/include
 let mapleader=","
 
+set splitright
+set splitbelow
 set noswapfile
 map <leader>w :w<CR>
 map <C-A> <Nop>
