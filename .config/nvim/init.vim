@@ -15,6 +15,7 @@ set scrolloff=3
 set tags+=,/usr/lib/include
 let mapleader=","
 
+set splitright
 set noswapfile
 map <leader>w :w<CR>
 map <C-A> <Nop>
@@ -23,6 +24,7 @@ nnoremap <leader>O O<Esc>
 nnoremap <leader>st :SyntasticToggleMode<CR>
 nnoremap <leader>sc :SyntasticCheck<CR>
 nnoremap <leader>d :FZF<CR>
+nnoremap <leader>D :FZF %:h<CR>
 
 " Enable pasting from global clipboard
 " with CTRL+V in Insert mode
