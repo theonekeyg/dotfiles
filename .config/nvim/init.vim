@@ -60,6 +60,7 @@ Plug 'vim-syntastic/syntastic'
 
 " Filetype modules
 " Plug 'sheerun/vim-polyglot'
+Plug 'tomlion/vim-solidity'
 Plug 'rhysd/vim-llvm'
 Plug 'mboughaba/i3config.vim'
 Plug 'theonekeyg/rust.vim'
