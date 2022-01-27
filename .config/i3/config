@@ -22,8 +22,9 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3blocks
 
 # Binds to save screenshots to clipboard (requires maim and xclip)
-bindsym Ctrl+Print exec maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec maim -s | xclip -selection clipboard -t image/png
+bindsym Print exec maim_helper.sh -f
+bindsym Ctrl+Print exec maim_helper.sh -w
+bindsym Ctrl+Shift+Print exec maim_helper.sh -s
 
 bindsym $mod+Return exec xterm
 bindsym $mod+Shift+q kill
