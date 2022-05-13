@@ -1,6 +1,8 @@
 #!/usr/bin/sh
 
 xset r rate 250 40
+xrandr --output HDMI-0 --brightness 0.7
+xrandr --output DP-0 --auto --right-of HDMI-0
 
 if [ -d $HOME/dotfiles/bin ]; then
   if [ -z $PATH ]; then
