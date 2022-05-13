@@ -51,13 +51,73 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-if [ "$color_prompt" = yes ]; then
-  PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]\$ "
-else
-  PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\$(parse_git_branch)\$ "
-fi
+timer_now() {
+  date +%s%N
+}
 
-unset color_prompt force_color_prompt
+timer_start() {
+  timer_start=${timer_start:-$(timer_now)}
+}
+
+function timer_stop {
+  [[ -z $timer_start ]] && return
+  local delta_us=$((($(timer_now) - ${timer_start}) / 1000))
+  local us=$((delta_us % 1000))
+  local ms=$(((delta_us / 1000) % 1000))
+  local s=$(((delta_us / 1000000) % 60))
+  local m=$(((delta_us / 60000000) % 60))
+  local h=$((delta_us / 3600000000))
+  # Goal: always show around 3 digits of accuracy
+  if   [[ h -gt 0 ]];    then timer_show=${h}h${m}m
+  elif [[ m -gt 0 ]];    then timer_show=${m}m${s}s
+  elif [[ s -ge 10 ]];   then timer_show=${s}.$((ms / 100))s
+  elif [[ s -gt 0 ]];    then timer_show=${s}.$(printf %03d $ms)s
+  elif [[ ms -ge 100 ]]; then timer_show=${ms}ms
+  elif [[ ms -gt 0 ]];   then timer_show=${ms}.$((us / 100))ms
+  else                        timer_show=${us}us
+  fi
+  unset timer_start
+}
+
+set_prompt() {
+  Last_Command=$? # Must come first!
+  timer_stop
+
+  if [ "$color_prompt" = yes ]; then
+    Blue='\[\e[01;34m\]'
+    White='\[\e[01;37m\]'
+    Red='\[\e[01;31m\]'
+    Green='\[\e[01;32m\]'
+    Yellow='\[\e[01;33m\]'
+    Reset='\[\e[00m\]'
+    FancyX='\342\234\227'
+    Checkmark='\342\234\223'
+  else
+    Blue=''
+    White=''
+    Red=''
+    Green=''
+    Reset=''
+    FancyX=''
+    Checkmark=''
+  fi
+
+  PS1="${debian_chroot:+($debian_chroot)}$Green\u@\h$Reset:$Blue\w"
+
+  PS1+="$Yellow\$(parse_git_branch)$Reset"
+
+  if [ $Last_Command -eq 0 ]; then
+    PS1+=" $Green($Checkmark ${timer_show})"
+  else
+    PS1+=" $Red($FancyX ${timer_show})"
+  fi
+
+  PS1+="$Reset $ "
+}
+
+set_prompt
+trap 'timer_start' DEBUG
+PROMPT_COMMAND='set_prompt'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -103,7 +163,7 @@ alias clip="xclip -selection clipboard"
 
 set -o vi
 
-# Disable XOFF from Software flow control 
+# Disable XOFF from Software flow control
 # (cause of issues when using with vim)
 stty -ixon
 
