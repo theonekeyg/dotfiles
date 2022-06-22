@@ -147,9 +147,11 @@ autocmd FileType python call Fold_py()
 
 autocmd BufNewFile,BufRead *.conf setfiletype conf
 autocmd FileType javascript setlocal tabstop=4 shiftwidth=4
+autocmd FileType typescript setlocal tabstop=4 shiftwidth=4
 autocmd FileType solidity setlocal tabstop=4 shiftwidth=4
-autocmd FileType java setlocal tabstop=4 shiftwidth=4 colorcolumn=90
+autocmd FileType java setlocal tabstop=2 shiftwidth=2 colorcolumn=100
 autocmd FileType asm setlocal tabstop=4 shiftwidth=4 noexpandtab
+autocmd FileType xml setlocal tabstop=8 shiftwidth=8 noexpandtab
 autocmd FileType markdown setlocal tabstop=4 shiftwidth=4 colorcolumn=80 textwidth=80 spell spelllang=en
 autocmd FileType gitcommit setlocal colorcolumn=72 textwidth=72 spell spelllang=en
 
