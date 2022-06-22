@@ -69,6 +69,7 @@ Plug 'mboughaba/i3config.vim'
 Plug 'theonekeyg/rust.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'pantharshit00/vim-prisma'
+Plug '1ixi1/FunC-vim', { 'for': 'func'}
 
 " Plugins with generic functionality
 Plug 'tpope/vim-surround'
