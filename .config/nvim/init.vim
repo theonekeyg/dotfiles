@@ -61,6 +61,8 @@ Plug 'vim-syntastic/syntastic'
 " Filetype modules
 " Plug 'sheerun/vim-polyglot'
 Plug 'tomlion/vim-solidity'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'pangloss/vim-javascript'
 Plug 'rhysd/vim-llvm'
 Plug 'mboughaba/i3config.vim'
