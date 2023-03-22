@@ -60,16 +60,19 @@ Plug 'vim-syntastic/syntastic'
 
 " Filetype modules
 " Plug 'sheerun/vim-polyglot'
-Plug 'tomlion/vim-solidity'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'pangloss/vim-javascript'
-Plug 'rhysd/vim-llvm'
-Plug 'mboughaba/i3config.vim'
-Plug 'theonekeyg/rust.vim'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'pantharshit00/vim-prisma'
 Plug '1ixi1/FunC-vim', { 'for': 'func'}
+Plug 'JIoJIaJIu/vim-fift'
+Plug 'elixir-editors/vim-elixir'
+Plug 'leafgarland/typescript-vim'
+Plug 'mboughaba/i3config.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'pangloss/vim-javascript'
+Plug 'pantharshit00/vim-prisma'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'rhysd/vim-llvm'
+Plug 'theonekeyg/rust.vim'
+Plug 'tomlion/vim-solidity'
+Plug 'rvmelkonian/move.vim'
 
 " Plugins with generic functionality
 Plug 'tpope/vim-surround'
@@ -147,12 +150,15 @@ endfunction
 autocmd FileType python call Fold_py()
 
 autocmd BufNewFile,BufRead *.conf setfiletype conf
-autocmd FileType javascript setlocal tabstop=4 shiftwidth=4
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
 autocmd FileType typescript setlocal tabstop=4 shiftwidth=4
 autocmd FileType solidity setlocal tabstop=4 shiftwidth=4
 autocmd FileType java setlocal tabstop=2 shiftwidth=2 colorcolumn=100
+autocmd FileType func setlocal tabstop=4 shiftwidth=4
 autocmd FileType asm setlocal tabstop=4 shiftwidth=4 noexpandtab
-autocmd FileType xml setlocal tabstop=8 shiftwidth=8 noexpandtab
+autocmd FileType xml setlocal tabstop=4 shiftwidth=4
+autocmd FileType go setlocal tabstop=4 shiftwidth=4 noexpandtab
+autocmd FileType html setlocal tabstop=4 shiftwidth=4 textwidth=0
 autocmd FileType markdown setlocal tabstop=4 shiftwidth=4 colorcolumn=80 textwidth=80 spell spelllang=en
 autocmd FileType gitcommit setlocal colorcolumn=72 textwidth=72 spell spelllang=en
 
