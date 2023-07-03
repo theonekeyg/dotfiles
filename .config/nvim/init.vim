@@ -57,6 +57,7 @@ Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
 Plug 'vim-syntastic/syntastic'
+Plug 'github/copilot.vim'
 
 " Filetype modules
 " Plug 'sheerun/vim-polyglot'
