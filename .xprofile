@@ -3,6 +3,8 @@
 xset r rate 250 40
 xrandr --output HDMI-0 --brightness 0.7
 xrandr --output DP-0 --auto --right-of HDMI-0
+xrandr --output DP-3 --off
+# xrandr --output DP-3 --auto --above DP-0
 
 if [ -d $HOME/dotfiles/bin ]; then
   if [ -z $PATH ]; then
@@ -11,6 +13,10 @@ if [ -d $HOME/dotfiles/bin ]; then
     export PATH=$HOME/dotfiles/bin:$PATH
   fi
 fi
+
+PATH=$HOME/usr/mattermost-desktop-5.1.0-linux-x64:$PATH
+PATH=$HOME/Telegram/Telegram:$PATH
+export PATH=$PATH
 
 [ -f ~/.Xresources ] && xrdb ~/.Xresources
 
