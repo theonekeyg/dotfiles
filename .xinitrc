@@ -2,4 +2,6 @@
 
 [ -f ~/.xprofile ] && . ~/.xprofile
 
+export $(dbus-launch)
+
 exec i3
