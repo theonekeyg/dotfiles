@@ -56,7 +56,7 @@ Plug 'mhinz/vim-startify'
 " Plugins that use external utilities (aka bloat)
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 Plug 'github/copilot.vim'
 
 " Filetype modules
@@ -76,6 +76,7 @@ Plug 'tomlion/vim-solidity'
 Plug 'rvmelkonian/move.vim'
 
 " Plugins with generic functionality
+Plug 'dense-analysis/ale' " Powerful LSP client
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'tpope/vim-commentary'
@@ -85,16 +86,15 @@ call plug#end()
 
 cnoreabbrev Ack Ack!
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'passive_filetypes': ['python', 'java', 'asm', 'rust'] }
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_html_checkers = ['syntastic-html-gjslint']
-let g:syntastic_javascript_checkers = ['syntastic-html-gjslint']
-
-let g:airline#extensions#whitespace#enabled = 0
+" Syntastic syntax check utility
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_mode_map = { 'passive_filetypes': ['python', 'java', 'asm', 'rust'] }
+" let g:syntastic_python_checkers = ['flake8']
+" let g:syntastic_html_checkers = ['syntastic-html-gjslint']
+" let g:syntastic_javascript_checkers = ['syntastic-html-gjslint']
 
 " let g:indentLine_setColors = 0
 " let g:indentLine_bgcolor_term = 150
@@ -103,11 +103,21 @@ let g:airline#extensions#whitespace#enabled = 0
 " let g:indentLine_concealcursor = 'inc'
 " let g:indentLine_conceallevel = 2
 
+" ALE configuration and bindings
+let g:ale_fixers = [ 'shfmt', 'rustfmt' ]
+map <leader>ar :ALERename<CR>
+map <leader>at :ALEGoToDefinition<CR>
+map <leader>st :ALEToggle<CR>
+map <leader>ad :ALEDetail<CR>
+map <leader>as :ALEGoToDefinition 
+map <leader>ah :ALEHover<CR>
+
 " VIM's theme
 syntax enable
 set termguicolors
 set background=dark
 colorscheme gruvbox
+let g:airline#extensions#whitespace#enabled = 0
 
 map <F2> :Buffers<CR>
 
