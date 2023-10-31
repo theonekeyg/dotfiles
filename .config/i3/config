@@ -28,7 +28,7 @@ bindsym Print exec maim_helper.sh -f
 bindsym Ctrl+Print exec maim_helper.sh -w
 bindsym Ctrl+Shift+Print exec maim_helper.sh -s
 
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
 bindsym $mod+f fullscreen toggle
