@@ -14,7 +14,6 @@ if [ -d $HOME/dotfiles/bin ]; then
   fi
 fi
 
-PATH=$HOME/usr/mattermost-desktop-5.1.0-linux-x64:$PATH
 PATH=$HOME/Telegram/Telegram:$PATH
 export PATH=$PATH
 
