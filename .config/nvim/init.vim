@@ -63,6 +63,7 @@ Plug 'github/copilot.vim'
 " Plug 'sheerun/vim-polyglot'
 Plug '1ixi1/FunC-vim', { 'for': 'func'}
 Plug 'JIoJIaJIu/vim-fift'
+Plug 'LnL7/vim-nix'
 Plug 'elixir-editors/vim-elixir'
 Plug 'leafgarland/typescript-vim'
 Plug 'mboughaba/i3config.vim'
