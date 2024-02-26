@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Wrapper around gh copilot suggest
+# Automatically adds the -t git flag
+
+if [ $# -eq 0 ]
+  then
+    echo "No arguments supplied"
+    exit 1
+fi
+
+# Merge all arguments into one string
+msg="$1"
+shift
+while [ $# -gt 0 ]
+do
+    msg="$msg $1"
+    shift
+done
+
+gh copilot suggest -t git "$msg"
