@@ -21,8 +21,6 @@ map <leader>w :w<CR>
 map <C-A> <Nop>
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
-nnoremap <leader>st :SyntasticToggleMode<CR>
-nnoremap <leader>sc :SyntasticCheck<CR>
 nnoremap <leader>d :FZF<CR>
 nnoremap <leader>D :FZF %:h<CR>
 
@@ -64,6 +62,7 @@ Plug 'github/copilot.vim'
 Plug '1ixi1/FunC-vim', { 'for': 'func'}
 Plug 'JIoJIaJIu/vim-fift'
 Plug 'LnL7/vim-nix'
+Plug 'vyperlang/vim-vyper'
 Plug 'elixir-editors/vim-elixir'
 Plug 'leafgarland/typescript-vim'
 Plug 'mboughaba/i3config.vim'
