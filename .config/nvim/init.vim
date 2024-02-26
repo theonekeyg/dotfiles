@@ -109,7 +109,7 @@ map <leader>ar :ALERename<CR>
 map <leader>at :ALEGoToDefinition<CR>
 map <leader>st :ALEToggle<CR>
 map <leader>ad :ALEDetail<CR>
-map <leader>as :ALEGoToDefinition 
+map <leader>as :ALEGoToDefinition<CR>
 map <leader>ah :ALEHover<CR>
 
 " VIM's theme
