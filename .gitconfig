@@ -1,6 +1,6 @@
 [user]
   email = theonekeyg@gmail.com
-  name = keyg
+  name = Alexandr Kolupaev
 [alias]
   st = status
   br = branch
@@ -15,3 +15,5 @@
   rebase = rebase --verbose
 [core]
   editor = vim
+[branch]
+	sort = -committerdate
