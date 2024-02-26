@@ -305,7 +305,7 @@ colors:
 
   # Bright colors
   bright:
-    black:   '#1B1212'
+    black:   '#b6bfbf'
     red:     '#EE4B2B'
     green:   '#7CFC00'
     yellow:  '#e6cc0b'
