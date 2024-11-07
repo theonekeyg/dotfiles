@@ -17,3 +17,10 @@
   editor = vim
 [branch]
 	sort = -committerdate
+
+# git-delta config (https://github.com/dandavison/delta)
+[delta]
+  navigate = true    # use n and N to move between diff sections
+  line-numbers = true
+[core]
+  pager = delta
