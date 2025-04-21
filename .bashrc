@@ -172,3 +172,4 @@ export FZF_DEFAULT_COMMAND='ag -U -g ""'
 
 # Local config exports
 [ -f ~/.bashrc_local ] && source ~/.bashrc_local
+. "/home/keyg/.deno/env"

@@ -1,6 +1,9 @@
 [user]
-  email = theonekeyg@gmail.com
+  email = a.kolupaev@entangle.fi
   name = Alexandr Kolupaev
+; [user]
+;   email = theonekeyg@gmail.com
+;   name = Alexandr Kolupaev
 [alias]
   st = status
   br = branch
@@ -24,3 +27,6 @@
   line-numbers = true
 [core]
   pager = delta
+[credential "https://gitlab.ent-dx.com"]
+	helper = 
+	helper = !/usr/bin/glab auth git-credential
