@@ -1,0 +1,3 @@
+[submodule ".config/nvim-new"]
+	path = .config/nvim-new
+	url = https://github.com/theonekeyg/.config-nvim.git
