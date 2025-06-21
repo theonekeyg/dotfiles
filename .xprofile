@@ -1,9 +1,9 @@
 #!/usr/bin/sh
 
 xset r rate 250 40
-xrandr --output HDMI-0 --brightness 0.7
-xrandr --output DP-0 --auto --right-of HDMI-0
-xrandr --output DP-3 --off
+# xrandr --output HDMI-1 --brightness 0.7
+xrandr --output DP-2 --auto --right-of HDMI-1
+# xrandr --output DP-3 --off
 # xrandr --output DP-3 --auto --above DP-0
 
 if [ -d $HOME/dotfiles/bin ]; then
@@ -19,6 +19,7 @@ export PATH=$PATH
 
 [ -f ~/.Xresources ] && xrdb ~/.Xresources
 
-setxkbmap -layout us,ru
+# setxkbmap -layout us,ru
 setxkbmap -option caps:escape
 setxkbmap -option 'grp:alt_shift_toggle'
+setxkbmap -layout us,ru -option "grp:alt_shift_toggle"
