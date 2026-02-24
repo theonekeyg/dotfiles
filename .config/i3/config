@@ -7,9 +7,6 @@ set $mod Mod4
 font pango:monospace 10
 hide_edge_borders both
 
-# Set keyboard layouts (e.g., US and RU) and a toggle key (Alt+Shift)
-exec --no-startup-id setxkbmap -layout us,ru -option "grp:alt_shift_toggle"
-
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -166,3 +163,6 @@ bar {
         mode dock
         modifier none
 }
+
+# Set keyboard layouts (e.g., US and RU) and a toggle key (Alt+Shift)
+exec --no-startup-id setxkbmap -layout us,ru -option "grp:alt_shift_toggle"

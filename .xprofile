@@ -2,9 +2,9 @@
 
 xset r rate 250 40
 # xrandr --output HDMI-1 --brightness 0.7
-xrandr --output DP-2 --auto --right-of HDMI-1
-# xrandr --output DP-3 --off
-# xrandr --output DP-3 --auto --above DP-0
+# xrandr --output DP-2 --auto
+# xrandr --output DP-0 --auto --right-of DP-2
+# xrandr --output HDMI-1 --auto --above DP-2 --rotate inverted
 
 if [ -d $HOME/dotfiles/bin ]; then
   if [ -z $PATH ]; then
@@ -23,3 +23,22 @@ export PATH=$PATH
 setxkbmap -option caps:escape
 setxkbmap -option 'grp:alt_shift_toggle'
 setxkbmap -layout us,ru -option "grp:alt_shift_toggle"
+
+# xrandr --output DP-2 --mode 2560x1440 --rate 180
+# xrandr --output DP-0 --mode 2560x1440 --rate 180 --right-of DP-2 
+# xrandr --output HDMI-1 --mode 2560x1440 --rate 180 --above DP-2 --rotate inverted
+
+# # Wait for all monitors to be connected (DP-0 is slow to initialize)
+# for i in $(seq 1 15); do
+#   xrandr | grep -q "DP-0 connected" && break
+#   sleep 1
+# done
+#
+# # Let the connection stabilize after detection
+# sleep 1
+#
+# # Single atomic xrandr call — avoids cascading hotplug events
+# xrandr \
+#   --output DP-2 --mode 2560x1440 --rate 180 --pos 0x1440 --primary \
+#   --output DP-0 --mode 2560x1440 --rate 180 --right-of DP-2 \
+#   --output HDMI-1 --mode 2560x1440 --rate 144 --above DP-2 --rotate inverted
